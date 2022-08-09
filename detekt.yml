@@ -583,7 +583,7 @@ potential-bugs:
   IteratorNotThrowingNoSuchElementException:
     active: true
   LateinitUsage:
-    active: true
+    active: false
     excludes: [ '**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/jsTest/**', '**/iosTest/**' ]
     ignoreOnClassesPattern: ''
   MapGetWithNotNullAssertionOperator:

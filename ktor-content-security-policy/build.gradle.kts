@@ -1,4 +1,4 @@
-description = "Ktor Content-Security-Policy support"
+description = "Ktor Content-Security-Policy Header Support"
 
 dependencies {
 
