@@ -1,15 +1,16 @@
 # Ktor API Key Authentication Provider
 
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/LukasForst/ktor-plugins?style=flat-square)
+
 Simple authentication provider for Ktor that verifies presence of the API key in the header. Useful if you want to
-use `X-Api-Key` or
-similar approaches for request authentication.
+use `X-Api-Key` or similar approaches for request authentication.
 
 ## Installation
 
 Include following in your `build.gradle.kts`:
 
 ```kotlin
-implementation("dev.forst", "ktor-api-key", "1.1.0")
+implementation("dev.forst", "ktor-api-key", "<latest-version>")
 ```
 
 Versions >= `1.1.0` have implementation for Ktor >= `2.0.0`, use `1.0.0` if you need support for older versions of Ktor.

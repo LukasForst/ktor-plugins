@@ -1,5 +1,7 @@
 # Ktor Rate Limiting
 
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/LukasForst/ktor-plugins?style=flat-square)
+
 A simple library that enables Rate Limiting in Ktor.
 
 ## Installation
@@ -7,7 +9,7 @@ A simple library that enables Rate Limiting in Ktor.
 Include following in your `build.gradle.kts`:
 
 ```kotlin
-implementation("dev.forst", "ktor-rate-limiting", "1.3.3")
+implementation("dev.forst", "ktor-rate-limiting", "<latest version>")
 ```
 
 Versions >= `1.2.0` have implementation for Ktor >= `2.0.0`, use `1.1.0` if you need support for older versions of Ktor.

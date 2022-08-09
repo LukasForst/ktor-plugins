@@ -1,5 +1,7 @@
 # Ktor Content Security Policy Plugin
 
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/LukasForst/ktor-plugins?style=flat-square)
+
 Plugin that allows setting [Content-Security-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) headers.
 
 ## Installation
@@ -7,7 +9,7 @@ Plugin that allows setting [Content-Security-Policy](https://developer.mozilla.o
 Include following in your `build.gradle.kts`:
 
 ```kotlin
-implementation("dev.forst", "ktor-content-security-policy", "1.0.0")
+implementation("dev.forst", "ktor-content-security-policy", "<latest version>")
 ```
 
 ## Usage
