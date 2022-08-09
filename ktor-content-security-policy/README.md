@@ -1,5 +1,7 @@
 # Ktor Content Security Policy Plugin
 
+Plugin that allows setting [Content-Security-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) headers.
+
 ## Installation
 
 Include following in your `build.gradle.kts`:
