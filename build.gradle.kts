@@ -109,6 +109,7 @@ subprojects {
 
                 pom {
                     name.set(project.name)
+                    description.set("${project.name} is part of Ktor plugins project developed by Lukas Forst.")
                     url.set("https://ktor-plugins.forst.dev")
                     packaging = "jar"
 
