@@ -7,6 +7,12 @@ object Versions {
 object Libs {
 
     const val ktorServerCore = "io.ktor:ktor-server-core:${Versions.ktor}"
+    const val ktorAuth = "io.ktor:ktor-server-auth:${Versions.ktor}"
+    const val ktorContentNegotation = "io.ktor:ktor-server-content-negotiation:${Versions.ktor}"
+    const val ktorSerializationJackson = "io.ktor:ktor-serialization-jackson:${Versions.ktor}"
+
+    const val ktorClientContentNegotiation = "io.ktor:ktor-client-content-negotiation:${Versions.ktor}"
+
 
     object Test {
         const val logBack = "ch.qos.logback:logback-classic:1.3.0-alpha5"
