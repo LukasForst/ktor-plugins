@@ -2,7 +2,8 @@
 
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/LukasForst/ktor-plugins?style=flat-square)
 
-A simple library that enables Rate Limiting in Ktor.
+A simple library that enables Rate Limiting in Ktor. Originally
+hosted in [LukasForst/ktor-rate-limiting](https://github.com/LukasForst/ktor-rate-limiting) repository.
 
 ## Installation
 

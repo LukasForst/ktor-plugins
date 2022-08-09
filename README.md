@@ -2,7 +2,8 @@
 
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/LukasForst/ktor-plugins?style=flat-square)
 
-Collection of useful Ktor plugins. All plugins are hosted on Maven central and can be added to your project as easy as:
+Collection of useful Ktor plugins. All plugins are hosted on Maven central and have same version that should be similar
+to the latest version of Ktor. The plugins can be added to your project as easy as:
 
 ```kotlin
 implementation("dev.forst", "ktor-<plugin>", "<latest version>")

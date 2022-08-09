@@ -3,7 +3,8 @@
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/LukasForst/ktor-plugins?style=flat-square)
 
 Simple authentication provider for Ktor that verifies presence of the API key in the header. Useful if you want to
-use `X-Api-Key` or similar approaches for request authentication.
+use `X-Api-Key` or similar approaches for request authentication. Originally hosted
+in [LukasForst/ktor-api-key](https://github.com/LukasForst/ktor-api-key) repository.
 
 ## Installation
 
