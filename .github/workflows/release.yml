@@ -1,0 +1,64 @@
+name: Release pipeline
+
+on:
+  release:
+    types: [ published ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Build & Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 8
+
+      - name: Build lib
+        run: ./gradlew assemble
+
+      - name: Run tests
+        run: ./gradlew test --info
+
+      - name: Check styling using Detekt
+        run: ./gradlew detekt --info
+
+  publish:
+    needs: [ test ]
+    name: Build and publish library
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 8
+          server-id: ossrh
+          server-username: OSSRH_USERNAME
+          server-password: OSSRH_PASSWORD
+          gpg-private-key: ${{ secrets.GPG_KEY }}
+          gpg-passphrase: GPG_KEY_PASSWORD
+
+      - name: Build lib
+        run: ./gradlew assemble --info
+
+      - name: Publish to Maven Central
+        run: ./gradlew publishToSonatype closeAndReleaseSonatypeStagingRepository --info
+        env:
+          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
+          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
+          GPG_KEY: ${{ secrets.GPG_KEY }}
+          GPG_KEY_PASSWORD: ${{ secrets.GPG_KEY_PASSWORD }}
+
+      - name: Generate API documentation
+        run: ./gradlew dokkaHtml
+
+      - name: Deploy API documentation to Github Pages
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: build/docs
