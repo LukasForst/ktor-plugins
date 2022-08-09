@@ -6,11 +6,10 @@ on:
 
 jobs:
   test:
-    runs-on: ${{ matrix.os }}
-    name: Build & Test - Java ${{ matrix.java }} on ${{ matrix.os }}
+    runs-on: ubuntu-latest
+    name: Build & Test - Java ${{ matrix.java }}
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest]
         java: [ 8, 17 ]
 
     steps:
