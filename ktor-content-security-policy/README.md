@@ -21,13 +21,21 @@ Minimal usage:
  * Minimal Ktor application using Content Security Policy.
  */
 fun Application.minimalExample() {
+    // this sets Content-Security-Policy
     install(ContentSecurityPolicy) {
-        skipWhen { call ->
-            call.request.path().startsWith("/some-ignored-route")
+        policy { call, body ->
+            when (call.request.path()) {
+                "/specific" -> mapOf("default-src" to "'none'")
+                "/ignored" -> null
+                else -> mapOf("default-src" to "'self'")
+            }
         }
-        policy(
-            "default-src" to "'none'"
-        )
+    }
+    // basic routing
+    routing {
+        get("/specific") { call.respond(HttpStatusCode.OK) }
+        get("/ignored") { call.respond(HttpStatusCode.OK) }
+        get("/") { call.respond(HttpStatusCode.OK) }
     }
 }
 ```

@@ -1,6 +1,10 @@
 detekt:
 	./gradlew detekt
 
+detekt-correct:
+	./gradlew detekt --auto-correct || true
+	./gradlew detekt
+
 test:
 	./gradlew test
 
