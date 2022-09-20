@@ -9,9 +9,9 @@ import io.ktor.server.application.createRouteScopedPlugin
 import io.ktor.server.application.hooks.CallSetup
 import io.ktor.server.response.header
 import io.ktor.server.response.respond
-import java.time.Duration
-import java.util.*
 import org.slf4j.LoggerFactory
+import java.time.Duration
+import java.util.UUID
 
 private val rateLimitingLogger = LoggerFactory.getLogger("dev.forst.ktor.ratelimiting.RateLimiting")
 
@@ -26,7 +26,7 @@ class RateLimitingConfiguration {
     /**
      * See [excludeRequestWhen].
      */
-    internal lateinit var requestExclusionFunction: RateLimitExclusion
+    internal var requestExclusionFunction: RateLimitExclusion = { false }
 
     /**
      * See [registerLimit].

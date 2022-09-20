@@ -115,17 +115,6 @@ fun Application.minimalExample() {
     install(ContentNegotiation) {
         jackson()
     }
-    // add basic routes for openapi.json and redirect to UI
-    routing {
-        // serve openapi.json
-        get("/openapi.json") {
-            call.respond(this@routing.application.openAPIGen.api.serialize())
-        }
-        // and do redirect to make it easier to remember
-        get("/swagger-ui") {
-            call.respondRedirect("/swagger-ui/index.html?url=/openapi.json", true)
-        }
-    }
     // and now example routing
     apiRouting {
         route("/example/{name}") {
