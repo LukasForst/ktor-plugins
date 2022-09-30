@@ -1,6 +1,6 @@
 object Versions {
     const val detekt = "1.20.0"
-    const val ktor = "2.1.1"
+    const val ktor = "2.1.2"
     const val jupiterVersion = "5.9.0"
 }
 

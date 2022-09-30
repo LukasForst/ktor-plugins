@@ -1,6 +1,8 @@
 package dev.forst.ktor.csp
 
+import io.ktor.http.HttpHeaders
 import io.ktor.server.application.ApplicationCall
+import io.ktor.server.application.PluginBuilder
 import io.ktor.server.application.createRouteScopedPlugin
 
 /**
@@ -17,6 +19,9 @@ class ContentSecurityPolicyConfiguration {
     /**
      * Call specific policy, if it returns map, it is used as a csp policy. When returns null,
      * the CSP Header is not set.
+     *
+     * The `call` and `body` are coming from the [PluginBuilder.onCallRespond],
+     * see more documentation there.
      *
      * By default, it uses strict policy "default-src 'none'".
      */
@@ -65,10 +70,16 @@ val ContentSecurityPolicy = createRouteScopedPlugin(
     onCallRespond { call, body ->
         if (!skip(call)) {
             val header = policy(call, body)?.toCspHeader() ?: return@onCallRespond
-            call.response.headers.append("Content-Security-Policy", header)
+            call.response.headers.append(HttpHeaders.ContentSecurityPolicy, header)
         }
     }
 }
+
+/**
+ * CSP Header name as extension for [HttpHeaders].
+ */
+val HttpHeaders.ContentSecurityPolicy: String
+    get() = "Content-Security-Policy"
 
 private fun Map<String, String?>.toCspHeader(): String = this
     .map { (key, value) -> if (value != null) "$key $value" else key }
