@@ -8,7 +8,7 @@ plugins {
     signing
 
     id("io.github.gradle-nexus.publish-plugin") version "1.1.0"
-    id("net.nemerosa.versioning") version "2.15.1"
+    id("net.nemerosa.versioning") version "3.0.0"
     id("io.gitlab.arturbosch.detekt") version Versions.detekt
 }
 
