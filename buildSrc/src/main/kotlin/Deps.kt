@@ -1,7 +1,6 @@
 object Versions {
-    const val detekt = "1.20.0"
     const val ktor = "2.1.3"
-    const val jupiterVersion = "5.9.0"
+    const val jupiterVersion = "5.9.1"
 }
 
 object Libs {
@@ -15,11 +14,12 @@ object Libs {
 
 
     object Test {
-        const val logBack = "ch.qos.logback:logback-classic:1.3.0-beta0"
+        // we can not upgrade to 1.4.x as we want to kep this compatible with JVM 8
+        const val logBack = "ch.qos.logback:logback-classic:1.3.4"
 
         const val ktorServerTestHost = "io.ktor:ktor-server-test-host:${Versions.ktor}"
 
-        const val mockk = "io.mockk:mockk:1.12.5"
+        const val mockk = "io.mockk:mockk:1.13.2"
 
         const val jupiterApi = "org.junit.jupiter:junit-jupiter-api:${Versions.jupiterVersion}"
         const val jupiterParams = "org.junit.jupiter:junit-jupiter-params:${Versions.jupiterVersion}"
