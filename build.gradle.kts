@@ -8,8 +8,9 @@ plugins {
     signing
 
     id("io.github.gradle-nexus.publish-plugin") version "1.1.0"
+    // we can not switch to 3.x.x because we want to keep it compatible with JVM 8
     id("net.nemerosa.versioning") version "2.15.1"
-    id("io.gitlab.arturbosch.detekt") version Versions.detekt
+    id("io.gitlab.arturbosch.detekt") version "1.21.0"
 }
 
 group = "dev.forst"
@@ -27,7 +28,7 @@ detekt {
 
 dependencies {
     // detekt plugins, not present in the final build
-    detektPlugins("io.gitlab.arturbosch.detekt", "detekt-formatting", Versions.detekt)
+    detektPlugins("io.gitlab.arturbosch.detekt", "detekt-formatting", "1.21.0")
 }
 
 tasks {
