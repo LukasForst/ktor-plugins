@@ -14,7 +14,8 @@ object Libs {
 
 
     object Test {
-        const val logBack = "ch.qos.logback:logback-classic:1.4.4"
+        // we can not upgrade to 1.4.x as we want to kep this compatible with JVM 8
+        const val logBack = "ch.qos.logback:logback-classic:1.3.4"
 
         const val ktorServerTestHost = "io.ktor:ktor-server-test-host:${Versions.ktor}"
 
