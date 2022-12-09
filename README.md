@@ -134,7 +134,8 @@ data class SomeResponse(val bar: String)
 
 ## Ktor Rate Limiting
 
-A simple library that enables Rate Limiting in Ktor.
+A simple library that enables Rate Limiting in Ktor. Note that Ktor now offers their own rate limiting plugin since `2.2.0`, we recommend
+using [their implementation](https://ktor.io/docs/rate-limit.html).
 
 ```kotlin
 /**
