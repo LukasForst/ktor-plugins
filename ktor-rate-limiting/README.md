@@ -5,6 +5,11 @@
 A simple library that enables Rate Limiting in Ktor. Originally
 hosted in [LukasForst/ktor-rate-limiting](https://github.com/LukasForst/ktor-rate-limiting) repository.
 
+## Deprecation Notice
+
+Ktor now offers their own rate limiting plugin since `2.2.0`, we recommend
+using [their implementation](https://ktor.io/docs/rate-limit.html).
+
 ## Installation
 
 Include following in your `build.gradle.kts`:
