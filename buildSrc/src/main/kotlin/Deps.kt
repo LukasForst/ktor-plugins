@@ -1,6 +1,6 @@
 object Versions {
-    const val ktor = "2.2.1"
-    const val jupiterVersion = "5.9.1"
+    const val ktor = "2.2.2"
+    const val jupiterVersion = "5.9.2"
 }
 
 object Libs {
