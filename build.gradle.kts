@@ -2,7 +2,7 @@ import io.gitlab.arturbosch.detekt.Detekt
 import org.gradle.jvm.tasks.Jar
 
 plugins {
-    kotlin("jvm") version "1.8.0"
+    kotlin("jvm") version "1.8.10"
 
     `maven-publish`
     signing
