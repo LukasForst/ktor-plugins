@@ -1,5 +1,5 @@
 object Versions {
-    const val ktor = "2.2.2"
+    const val ktor = "2.2.4"
     const val jupiterVersion = "5.9.2"
 }
 
